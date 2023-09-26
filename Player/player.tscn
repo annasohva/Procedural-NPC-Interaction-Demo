@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cuparwktoi4j6"]
 
 [ext_resource type="Texture2D" uid="uid://dj5vhcqfs80ie" path="res://Assets/dungeon_tilemap.png" id="1_f2ftl"]
-[ext_resource type="Script" path="res://Scripts/player.cs" id="1_rffv6"]
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_ge1hn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tikn8"]
 radius = 3.0
@@ -9,7 +9,7 @@ height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
-script = ExtResource("1_rffv6")
+script = ExtResource("1_ge1hn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
