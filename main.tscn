@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://v2a53ucg6f0n"]
+[gd_scene load_steps=8 format=3 uid="uid://v2a53ucg6f0n"]
 
 [ext_resource type="PackedScene" uid="uid://brpqat0h81056" path="res://Map/town.tscn" id="1_wpkrj"]
 [ext_resource type="PackedScene" uid="uid://cvkctppbti7tv" path="res://Player/player.tscn" id="2_jpd5m"]
+[ext_resource type="PackedScene" uid="uid://dbt67kn34j8dk" path="res://NPCs/wizard.tscn" id="3_iw7ac"]
+[ext_resource type="PackedScene" uid="uid://5p5wcko603j3" path="res://NPCs/smith.tscn" id="4_q34wj"]
+[ext_resource type="PackedScene" uid="uid://dcl2s7k5yokor" path="res://NPCs/Commoner.tscn" id="5_d7bmi"]
+[ext_resource type="PackedScene" uid="uid://cyfists64vg0i" path="res://NPCs/commoner_girl.tscn" id="6_6j8yo"]
+[ext_resource type="PackedScene" uid="uid://dm8cncmugncua" path="res://NPCs/old_commoner.tscn" id="7_drrd7"]
 
 [node name="Main" type="Node"]
 
 [node name="Town" parent="." instance=ExtResource("1_wpkrj")]
 
 [node name="Player" parent="Town" instance=ExtResource("2_jpd5m")]
+
+[node name="Wizard" parent="Town" instance=ExtResource("3_iw7ac")]
+position = Vector2(-152, -353)
+
+[node name="Smith" parent="Town" instance=ExtResource("4_q34wj")]
+position = Vector2(-151, -241)
+
+[node name="CommonerGirl" parent="Town" instance=ExtResource("6_6j8yo")]
+position = Vector2(70, -292)
+
+[node name="OldCommoner" parent="Town" instance=ExtResource("7_drrd7")]
+position = Vector2(153, -195)
+
+[node name="Commoner" parent="Town" instance=ExtResource("5_d7bmi")]
+position = Vector2(-8, -150)
