@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvkctppbti7tv"]
+[gd_scene load_steps=5 format=3 uid="uid://cvkctppbti7tv"]
 
 [ext_resource type="Script" path="res://Scripts/player.cs" id="1_82y1f"]
 [ext_resource type="Texture2D" uid="uid://dj5vhcqfs80ie" path="res://Assets/dungeon_tilemap.png" id="1_f2ftl"]
@@ -6,6 +6,8 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tikn8"]
 radius = 3.0
 height = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_brjpy"]
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -24,3 +26,10 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_tikn8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerArea" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_brjpy")

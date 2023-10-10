@@ -15,16 +15,21 @@
 [node name="Player" parent="Town" instance=ExtResource("2_jpd5m")]
 
 [node name="Wizard" parent="Town" instance=ExtResource("3_iw7ac")]
+y_sort_enabled = true
 position = Vector2(-152, -353)
 
 [node name="Smith" parent="Town" instance=ExtResource("4_q34wj")]
+y_sort_enabled = true
 position = Vector2(-151, -241)
 
 [node name="CommonerGirl" parent="Town" instance=ExtResource("6_6j8yo")]
+y_sort_enabled = true
 position = Vector2(70, -292)
 
 [node name="OldCommoner" parent="Town" instance=ExtResource("7_drrd7")]
+y_sort_enabled = true
 position = Vector2(153, -195)
 
 [node name="Commoner" parent="Town" instance=ExtResource("5_d7bmi")]
+y_sort_enabled = true
 position = Vector2(-8, -150)

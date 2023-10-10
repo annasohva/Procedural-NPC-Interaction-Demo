@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://gshjesqbdgf"]
+
+[ext_resource type="Script" path="res://Scripts/DialogueNode.cs" id="1_slkju"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_memhb"]
+radius = 30.0
+
+[node name="DialogueNode" type="Node2D"]
+script = ExtResource("1_slkju")
+
+[node name="DialogueArea" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_memhb")
