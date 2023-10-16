@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://v2a53ucg6f0n"]
+[gd_scene load_steps=11 format=3 uid="uid://v2a53ucg6f0n"]
 
+[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_dm4rw"]
 [ext_resource type="PackedScene" uid="uid://brpqat0h81056" path="res://Map/town.tscn" id="1_wpkrj"]
 [ext_resource type="PackedScene" uid="uid://cvkctppbti7tv" path="res://Player/player.tscn" id="2_jpd5m"]
 [ext_resource type="PackedScene" uid="uid://dbt67kn34j8dk" path="res://NPCs/wizard.tscn" id="3_iw7ac"]
@@ -7,8 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://dcl2s7k5yokor" path="res://NPCs/Commoner.tscn" id="5_d7bmi"]
 [ext_resource type="PackedScene" uid="uid://cyfists64vg0i" path="res://NPCs/commoner_girl.tscn" id="6_6j8yo"]
 [ext_resource type="PackedScene" uid="uid://dm8cncmugncua" path="res://NPCs/old_commoner.tscn" id="7_drrd7"]
+[ext_resource type="PackedScene" uid="uid://7v4t4ovfepnx" path="res://UI/dialogue_box.tscn" id="8_6tbsm"]
+[ext_resource type="PackedScene" uid="uid://b5ee1j4s4au3a" path="res://Dialogue/llama_gpt.tscn" id="9_1kr54"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_dm4rw")
 
 [node name="Town" parent="." instance=ExtResource("1_wpkrj")]
 
@@ -33,3 +37,9 @@ position = Vector2(153, -195)
 [node name="Commoner" parent="Town" instance=ExtResource("5_d7bmi")]
 y_sort_enabled = true
 position = Vector2(-8, -150)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" parent="UI" instance=ExtResource("8_6tbsm")]
+
+[node name="LlamaGPT" parent="." instance=ExtResource("9_1kr54")]
