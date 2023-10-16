@@ -7,7 +7,7 @@
 radius = 3.0
 height = 16.0
 
-[node name="Wizard" type="CharacterBody2D" groups=["NPC"]]
+[node name="Smith" type="CharacterBody2D" groups=["NPC"]]
 position = Vector2(0, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,3 +22,5 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lfi1b")
 
 [node name="DialogueNode" parent="." instance=ExtResource("2_kmpya")]
+openingLine = "Hi traveller! I am the village smith. How may I assist you?"
+npcDescription = "the village smith"

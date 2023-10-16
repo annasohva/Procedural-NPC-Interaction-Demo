@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://gshjesqbdgf"]
+[gd_scene load_steps=4 format=3 uid="uid://gshjesqbdgf"]
 
 [ext_resource type="Script" path="res://Scripts/DialogueNode.cs" id="1_slkju"]
+[ext_resource type="Texture2D" uid="uid://evkys72puiwg" path="res://Assets/e_keypress.png" id="2_tl7vb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_memhb"]
 radius = 30.0
@@ -14,3 +15,9 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea"]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_memhb")
+
+[node name="KeyPressTip" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(15, -25)
+texture = ExtResource("2_tl7vb")

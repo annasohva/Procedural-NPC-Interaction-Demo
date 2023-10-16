@@ -60,3 +60,16 @@ offset_top = 0.119995
 offset_right = 0.34198
 offset_bottom = -0.200043
 text = "Say"
+
+[node name="CloseDialogueButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.857
+anchor_top = 0.583
+anchor_right = 0.904
+anchor_bottom = 0.667
+offset_left = 0.121948
+offset_top = 0.160004
+offset_right = -0.0160522
+offset_bottom = -0.160034
+text = "X"

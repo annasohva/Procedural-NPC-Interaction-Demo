@@ -41,5 +41,6 @@ position = Vector2(-8, -150)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" parent="UI" instance=ExtResource("8_6tbsm")]
+visible = false
 
 [node name="LlamaGPT" parent="." instance=ExtResource("9_1kr54")]

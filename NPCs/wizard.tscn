@@ -22,3 +22,5 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lfi1b")
 
 [node name="DialogueNode" parent="." instance=ExtResource("2_45ng3")]
+openingLine = "Greetings traveller. I am the village wizard. Tell me what you need."
+npcDescription = "the village wizard"
