@@ -12,9 +12,6 @@ public partial class DialogueNode : Node2D
 	[Export]
 	string npcDescription = "";
 
-	[Signal]
-	public delegate void DialogueInitiatedEventHandler();
-
 	Sprite2D keyPressTip;
 
 	bool playerInArea = false;
@@ -34,7 +31,6 @@ public partial class DialogueNode : Node2D
     {
         if (@event.IsActionPressed("interact") && playerInArea){
 			dialogueBox.OpenDialogue(openingLine);
-			EmitSignal("DialogueInitiated");
 		}
     }
 
