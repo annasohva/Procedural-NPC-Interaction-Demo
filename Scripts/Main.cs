@@ -23,7 +23,7 @@ public partial class Main : Node
 			npcDialogueNode.dialogueBox = dialogueBox;
 
 			// lisätään myös referenssi LlamaGPT:een
-			npcDialogueNode.llamaGPT = this.GetNode<LlamaGPT>("LlamaGPT");
+			npcDialogueNode.llamaSharp = this.GetNode<LlamaSharp>("LlamaSharp");
 
 			// yhdistetään dialogueboxista signaali dialoguenodeen. näyttää erroria mutta se on bugi ja ohjelma silti toimii
 			dialogueBox.PlayerDialogueSaid += npcDialogueNode.OnPlayerDialogueSaid;

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5ee1j4s4au3a"]
 
-[ext_resource type="Script" path="res://Scripts/LlamaGPT.cs" id="1_7doh6"]
+[ext_resource type="Script" path="res://Scripts/LlamaSharp.cs" id="1_7doh6"]
 
 [node name="LlamaGPT" type="Node"]
 script = ExtResource("1_7doh6")

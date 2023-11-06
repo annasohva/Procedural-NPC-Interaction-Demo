@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 public partial class DialogueNode : Node2D
 {
-	public LlamaGPT llamaGPT;
+	public LlamaSharp llamaSharp;
 	public DialogueBox dialogueBox;
 
 	[Export]
@@ -49,7 +49,7 @@ public partial class DialogueNode : Node2D
 	public void OnPlayerDialogueSaid(string playerDialogue) // yhdistetty dialogueboxin OnPlayerDialogueSaid signaaliin
 	{
 		if(playerInArea) {
-			string generatedText = llamaGPT.GenerateText(npcDescription, playerDialogue); // pyytää llamaa generoimaan tekstin
+			string generatedText = llamaSharp.GenerateText(npcDescription, playerDialogue); // pyytää llamaa generoimaan tekstin
 			dialogueBox.SetText(generatedText);
 		}
 	}
