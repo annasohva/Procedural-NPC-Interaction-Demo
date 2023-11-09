@@ -1,2 +1,3 @@
 # Godot 4+ specific ignores
 .godot/
+Scripts/model/llama-2-7b-guanaco-qlora.Q3_K_M.gguf
