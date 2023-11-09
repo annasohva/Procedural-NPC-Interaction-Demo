@@ -58,7 +58,8 @@ public partial class LlamaSharp : Node
 		}
 
 		// Tallennetaan sessio, että muistaa mitä ollana keskusteltu
-		session.SaveSession("SavedSessionPath");
+		//session.SaveSession("SavedSessionPath");
+		
 		string originalString = asnwer;
 
 		// poistetaan user: syötöstä
