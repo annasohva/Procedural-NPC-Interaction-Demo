@@ -3,12 +3,15 @@ using LLama;
 using LLama.Common;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 public partial class LlamaSharp : Node
 {
 	static private string modelName = "llama-2-7b-guanaco-qlora.Q3_K_M.gguf";
-	private string modelPath = "C:\\Users\\NikoNiemelä\\Documents\\Development\\Karelia\\Vuosi02\\TekoälyJaRobotiikka\\Projekti\\Procedural-NPC-Interaction-Demo\\Scripts\\model\\llama-2-7b-guanaco-qlora.Q3_K_M.gguf";
+	//private string modelPath = "C:\\Users\\NikoNiemelä\\Documents\\Development\\Karelia\\Vuosi02\\TekoälyJaRobotiikka\\Projekti\\Procedural-NPC-Interaction-Demo\\Scripts\\model\\llama-2-7b-guanaco-qlora.Q3_K_M.gguf";
 	// Called when the node enters the scene tree for the first time.
+
+	private string modelPath = Directory.GetCurrentDirectory() + "\\scripts\\model\\" + modelName;
 	public override void _Ready()
 	{
 	}
@@ -46,7 +49,8 @@ public partial class LlamaSharp : Node
 		ChatSession session = new ChatSession(ex);
 
 		// Ladataan chattibotille persoona tallennetuista profiileista
-		session.LoadSession("C:\\Users\\NikoNiemelä\\Documents\\Development\\Karelia\\Vuosi02\\TekoälyJaRobotiikka\\Projekti\\Procedural-NPC-Interaction-Demo\\Scripts\\SavedSessionPath\\Blacksmith");
+		// Tällähetkell on Blacmsith ja Wizard
+		session.LoadSession( Directory.GetCurrentDirectory() + "\\scripts\\SavedSessionPath\\Blacksmith");
 
 		foreach (var text in session.Chat(playerDialogue, new InferenceParams() { Temperature = 0.6f, AntiPrompts = new List<string> { "User:" } }))
 		{
