@@ -34,7 +34,7 @@ public partial class LlamaSharp : Node
 		LLamaWeights model;
 		LLamaContext context;
 		//string prompt = $"User:Could you talk like a master {npcDescription}\r\nGriswald: I am the crafty blacksmith how may i help you?\r\n";
-		string asnwer = "";
+		string answer = "";
 
 		// Load a model
 		var parameters = new ModelParams(modelPath)
@@ -43,6 +43,7 @@ public partial class LlamaSharp : Node
 			Seed = 1337,
 			GpuLayerCount = 5
 		};
+
 		model = LLamaWeights.LoadFromFile(parameters);
 		context = model.CreateContext(parameters);
 		var ex = new InteractiveExecutor(context);
@@ -50,20 +51,32 @@ public partial class LlamaSharp : Node
 
 		// Ladataan chattibotille persoona tallennetuista profiileista
 		// Tällähetkell on Blacmsith ja Wizard
-		session.LoadSession( Directory.GetCurrentDirectory() + "\\scripts\\SavedSessionPath\\Blacksmith");
+		if(npcDescription == "the village smith")
+		{
+			session.LoadSession( Directory.GetCurrentDirectory() + "\\scripts\\SavedSessionPath\\Blacksmith");
+		}
+		else if (npcDescription == "the village wizard")
+		{
+			session.LoadSession(Directory.GetCurrentDirectory() + "\\scripts\\SavedSessionPath\\Wizard");
+		}
+		else
+		{
+			return "You should talk to the blacksmith or the wizard.";
+		}
+		
 
 		foreach (var text in session.Chat(playerDialogue, new InferenceParams() { Temperature = 0.6f, AntiPrompts = new List<string> { "User:" } }))
 		{
-			asnwer += text;
+			answer += text;
 		}
 
 		// Tallennetaan sessio, että muistaa mitä ollana keskusteltu
 		//session.SaveSession("SavedSessionPath");
 		
-		string originalString = asnwer;
+		string originalString = answer;
 
 		// poistetaan user: syötöstä
-		string modifiedString = originalString[..(asnwer.Length - 5)];
+		string modifiedString = originalString[..(answer.Length - 5)];
 		return modifiedString;
 	}
 }
