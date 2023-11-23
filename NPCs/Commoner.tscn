@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcl2s7k5yokor"]
+[gd_scene load_steps=5 format=3 uid="uid://dcl2s7k5yokor"]
 
+[ext_resource type="Script" path="res://NPCs/Commoner.cs" id="1_jtq64"]
 [ext_resource type="Texture2D" uid="uid://dj5vhcqfs80ie" path="res://Assets/dungeon_tilemap.png" id="1_ryhtw"]
 [ext_resource type="PackedScene" uid="uid://gshjesqbdgf" path="res://Dialogue/dialogue_node.tscn" id="2_waler"]
 
@@ -9,6 +10,7 @@ height = 16.0
 
 [node name="Commoner" type="CharacterBody2D" groups=["NPC"]]
 position = Vector2(0, -1)
+script = ExtResource("1_jtq64")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
@@ -24,3 +26,9 @@ shape = SubResource("CapsuleShape2D_lfi1b")
 [node name="DialogueNode" parent="." instance=ExtResource("2_waler")]
 openingLine = "Hi traveller. Welcome to our village."
 npcDescription = "a commoner man"
+
+[node name="CommonerTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="CommonerTimer" to="." method="OnTimerTimeout"]
