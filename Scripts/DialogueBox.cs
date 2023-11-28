@@ -7,6 +7,7 @@ public partial class DialogueBox : Control
 	Button closeDialogueButton;
 	TextEdit sayText;
 	RichTextLabel dialogueText;
+	bool dialOpen = false;
 
 	[Signal]
 	public delegate void PlayerDialogueSaidEventHandler(string playerDialogue);
@@ -33,6 +34,7 @@ public partial class DialogueBox : Control
 		this.Hide();
 		sayText.Text = "";
 		dialogueText.Text = "";
+		dialOpen = false;
 	}
 
 	/// <summary>
@@ -41,8 +43,12 @@ public partial class DialogueBox : Control
 	/// <param name="openingLine">Teksti mikä DialogueBoxissa näytetään aluksi.</param>
 	public void OpenDialogue(string openingLine)
 	{
-		this.Show();
-		dialogueText.Text = openingLine;
+		if(!dialOpen)
+		{
+			dialOpen = true;
+			this.Show();
+			dialogueText.Text = openingLine;
+		}	
 	}
 
 	/// <summary>
